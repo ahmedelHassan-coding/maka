@@ -1,6 +1,11 @@
 /**********************************/
 /********** General CSS ***********/
 /**********************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: "Alexandria";
     color: #666666;
@@ -267,7 +272,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #header-carousel .carousel-item {
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -276,7 +281,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #header-carousel .carousel-item::before {
     content: '';
-    background: rgba(63, 105, 170, .5);
+background-image: url(../img/maaka.jpg);
+background-position: center center;
+background-size: cover;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -389,9 +396,9 @@ body.mobile-nav-active #mobile-nav-toggle {
         height: 100vh;
         width: 100%;
     }
-    #header-carousel .carousel-inner img{
+    /* #header-carousel .carousel-inner img{
         background-image: url(../img/kaaba.jfif)
-    }
+    } */
 
     #header-carousel h2 {
         margin-bottom: 15px;
@@ -507,7 +514,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     height: 5px;
     left: calc(50% - 25px);
     bottom: 0;
-    background: #3F69AA;
+    background:linear-gradient(to right, #ff6b6b, #ffd93d);
 }
 
 .section-header p {
@@ -612,39 +619,159 @@ body.mobile-nav-active #mobile-nav-toggle {
 /**********************************/
 /********** Service CSS ***********/
 /**********************************/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 .services-section {
+    padding: 4rem 0;
     text-align: right;
-    direction: rtl;
-    padding: 60px 0;
-    background-color: #f9f9f9;
 }
 
 .section-header {
-    margin-bottom: 40px;
-}
-
-.service-col {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: 0.3s;
-    margin: 20px;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.service-col:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(to right, #ff6b6b, #ffd93d);
+    border-radius: 2px;
+}
+
+.section-header p {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b6b10, #ffd93d10);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover::before {
+    opacity: 1;
 }
 
 .service-icon {
-    font-size: 40px;
-    color: #d4af37;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
+.service-card:hover .service-icon {
+    transform: scale(1.2);
+}
 
+.service-card h3 {
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Staggered animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered delays for each card */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+.service-card:nth-child(9) { animation-delay: 0.9s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+}
 /**********************************/
 /********** Counter CSS ***********/
 /**********************************/
@@ -874,91 +1001,165 @@ body.mobile-nav-active #mobile-nav-toggle {
 /**********************************/
 /******** Testimonial CSS *********/
 /**********************************/
-#testimonials {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2d3436;
+    margin-bottom: 3rem;
     position: relative;
-    /* padding: 60px 0; */
-    background: #3F69AA;
+    padding-bottom: 1rem;
 }
 
-#testimonials .container {
-    max-width: 700px;
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border-radius: 2px;
 }
 
-#testimonials .testimonial-item {
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    transform: scaleX(1);
+}
+
+.testimonial-header {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-#testimonials .testimonial-item .testimonial-img {
-    position: relative;
-    width: 150px;
-}
-
-#testimonials .testimonial-item img {
-    border: 5px solid rgba(256, 256, 256, .3);
-    border-radius: 150px 0 0 150px;
-}
-
-#testimonials .testimonial-item .testimonial-content {
-    position: relative;
-    width: calc(100% - 150px);
-    margin-left: 15px;
-    overflow: hidden;
-}
-
-#testimonials .testimonial-item h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-
-#testimonials .testimonial-item h4 {
-    position: relative;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 300;
-    font-style: italic;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    padding-bottom: 5px;
-}
-
-#testimonials .testimonial-item h4::after {
-    position: absolute;
-    content: "";
-    width: 50px;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    background: rgba(256, 256, 256, .3);
-}
-
-#testimonials .testimonial-item p {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 0;
-}
-
-#testimonials .owl-nav,
-#testimonials .owl-dots {
-    margin-top: 15px;
-    text-align: center;
-}
-
-#testimonials .owl-dot {
-    display: inline-block;
-    margin: 0 5px;
-    width: 12px;
-    height: 12px;
+.testimonial-header img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: rgba(256, 256, 256, .3);
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-#testimonials .owl-dot.active {
-    background: #ffffff;
+.testimonial-card:hover .testimonial-header img {
+    transform: scale(1.1);
+}
+
+.testimonial-info {
+    flex: 1;
+}
+
+.testimonial-info h3 {
+    font-size: 1.1rem;
+    color: #2d3436;
+    margin-bottom: 0.25rem;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    color: #636e72;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    position: relative;
+    padding-right: 1rem;
+}
+
+.testimonial-text::before {
+    content: '"';
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    font-size: 3rem;
+    color: #ff7e5f;
+    opacity: 0.2;
+    font-family: serif;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation delay for cards */
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+.testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(5) { animation-delay: 0.5s; }
+.testimonial-card:nth-child(6) { animation-delay: 0.6s; }
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.25rem;
+    }
 }
 
 
@@ -1216,51 +1417,198 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 /* CTA Section */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .cta {
+     display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 5rem;
+    margin-top: 5rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.cta-image {
     position: relative;
-    padding: 100px 0;
-    margin-bottom: 80px;
-    margin-top: 80px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/الكعبةjfif.jfif');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: white;
+    height: 300px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), transparent);
+    z-index: 1;
+}
+
+.cta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.cta-image:hover img {
+    transform: scale(1.1);
 }
 
 .cta-content {
-    position: relative;
-    /* z-index: 2; */
+    text-align: center;
+    color: #FF6B00;
+    padding: 1rem;
 }
 
-.cta-button {
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideUp 0.6s ease-out;
+}
+
+.cta-content p {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 2rem;
+    animation: slideUp 0.6s ease-out 0.2s backwards;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #FFF8F3;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #FF6B00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: white;
+}
+
+.feature-text {
+    text-align: right;
+    color: #333;
+}
+
+.whatsapp-button {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background-color: var(--secondary-color);
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: #25D366;
     color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: var(--transition);
-    margin-top: 30px;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    animation: bounceSoft 2s infinite;
 }
 
-.cta-button:hover {
-    background-color: var(--accent-color);
+.whatsapp-button:hover {
+    background-color: #128C7E;
     transform: translateY(-3px);
-    color: black;
 }
-.cta .cta-content h2,p{
-    text-align: center;
+
+.whatsapp-button:hover .whatsapp-icon {
+    animation: pulse 1s infinite;
 }
-.cta span {
-    background-color: green;
-border-radius: 8px;
-    padding: 10px 15px;
-    transition: .5s ease;
+
+.whatsapp-icon {
+    width: 1.5rem;
+    height: 1.5rem;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceSoft {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 768px) {
+    .cta {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .cta-image {
+        height: 400px;
+    }
+
+    .cta-content {
+        text-align: right;
+    }
+} 
+
 /* CTA Section */
 
 
@@ -1371,7 +1719,126 @@ border-radius: 8px;
 
 
 /* why choose us */
-/* top bar */
  
-/* topbar */
+/* banner */
+/* General Reset */
+ 
 
+/* Banner Section Styling */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    background: url("../img/wallpaperflare.com_wallpaper\ \(4\).jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Overlay for Text Contrast */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1;
+}
+
+/* Banner Content Styling */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Heading Styling */
+.banner-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Paragraph Styling */
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/* WhatsApp Button Styling */
+.banner-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #25d366; /* WhatsApp green color */
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.banner-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Font Awesome Icon Styling */
+.banner-button i {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* banner */
