@@ -1264,7 +1264,7 @@ background-size: cover;
 .footer p {
     font-size: 16px;
     color: #ccc;
-    text-align: right;
+    /* text-align: right; */
 
 }
 
@@ -1281,7 +1281,7 @@ background-size: cover;
     color: #ccc;
     text-decoration: none;
     transition: 0.3s;
-}
+ }
 
 .footer-links ul li a i {
     margin-left: 5px;
@@ -1326,6 +1326,7 @@ background-size: cover;
 }
 
 .footer-bottom a {
+    
     color: #d4af37;
     text-decoration: none;
 }
@@ -1339,6 +1340,7 @@ background-size: cover;
     .footer {
         text-align: center;
     }
+    
 
     .footer-links ul {
         display: inline-block;
