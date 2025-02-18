@@ -1344,7 +1344,7 @@ background-size: cover;
 /* تحسين المظهر على الشاشات الصغيرة */
 @media (max-width: 768px) {
     .footer {
-        text-align: center;
+        text-align: right;
     }
     
 
@@ -1849,5 +1849,95 @@ background-size: cover;
 }
 
 
+/* Add this to your style.css file */
+.floating-buttons {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
 
+.floating-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.floating-button.whatsapp {
+    background-color: #25D366;
+}
+
+.floating-button.phone {
+    background-color: #007bff;
+}
+
+.floating-button .tooltip {
+    position: absolute;
+    left: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.floating-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-buttons {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .floating-button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+/* Animation for attention */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.floating-button.whatsapp {
+    animation: pulse 2s infinite;
+}
 /* banner */
