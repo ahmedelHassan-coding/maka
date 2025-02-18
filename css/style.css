@@ -896,8 +896,10 @@ background-size: cover;
     opacity: 1;
 }
 
-#portfolio .portfolio-container .col-lg-4,
-#portfolio .portfolio-container .col-md-4 {
+#portfolio .container .col-lg-4,
+#portfolio .container .col-md-4,
+#portfolio .container .col-sm-12
+{
     padding: 0;
 }
 
