@@ -283,7 +283,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #header-carousel .carousel-item::before {
     content: '';
+<<<<<<< HEAD
 background-image: url(../img/maaka.jpg);
+=======
+background-image: url(../img/cover.png);
+>>>>>>> b5ef11e (mine)
 background-position: center center;
 background-size: cover;
     position: absolute;
