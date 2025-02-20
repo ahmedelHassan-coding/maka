@@ -3,23 +3,23 @@
 
 <head>
     <meta charset="utf-8">
-    <title>الروضة الشريفة لل والعمرة | رحلات  وعمرة | زيارة الحرمين الشريفين</title>
+    <title>الروضة الشريفة العمرة | رحلات  وعمرة | زيارة الحرمين الشريفين</title>
 
     <!-- Primary Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="الروضة الشريفة لل والعمرة | خدمات ال والعمرة المتكاملة">
+    <meta name="title" content="الروضة الشريفة  العمرة | خدمات ال والعمرة المتكاملة">
     <meta name="description"
         content="شركة الروضة الشريفة تقدم خدمات ال والعمرة المتكاملة، ز فنادق في مكة والمدينة، برامج زيارة الحرمين الشريفين، رحلات  وعمرة بأسعار مميزة. خدمة 24/7 لضيوف الرحمن">
     <meta name="keywords"
         content=", عمرة, مكة المكرمة, المدينة المنورة, الحرم المكي, المسجد النبوي, ز فنادق مكة, برامج عمرة, رحلات , زيارة الحرمين, مناسك ال, شركة سياحة دينية, ز فنادق المدينة, خدمات الاج والمعتمرين">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Arabic">
-    <meta name="author" content="الروضة الشريفة لل والعمرة">
+    <meta name="author" content="الروضة الشريفة  العمرة">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwebsite.com/">
-    <meta property="og:title" content="الروضة الشريفة لل والعمرة | خدمات ال والعمرة المتكاملة">
+    <meta property="og:title" content="الروضة الشريفة  العمرة | خدمات ال والعمرة المتكاملة">
     <meta property="og:description"
         content="خدمات  وعمرة متكاملة، ز فنادق في مكة والمدينة، برامج زيارة الحرمين الشريفين بأسعار مميزة">
     <meta property="og:image" content="img/Logo.webp">
@@ -27,7 +27,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://yourwebsite.com/">
-    <meta property="twitter:title" content="الروضة الشريفة لل والعمرة | خدمات ال والعمرة المتكاملة">
+    <meta property="twitter:title" content="الروضة الشريفة  العمرة | خدمات ال والعمرة المتكاملة">
     <meta property="twitter:description"
         content="خدمات  وعمرة متكاملة، ز فنادق في مكة والمدينة، برامج زيارة الحرمين الشريفين بأسعار مميزة">
     <meta property="twitter:image" content="img/Logo.webp">
@@ -70,14 +70,67 @@
                 <a href="index.html"><img src="img/Logo.webp" alt="Logo" /></a>
             </div>
 
-            <nav id="nav-menu-container" >
-                <ul class="nav-menu reverse">
-                    <li class="menu-active"><a href="#header-carousel">الرئيسية</a></li>
-                    <li><a href="#about">عن الشركة</a></li>
-                    <li><a href="#services">خدمتنا</a></li>
-                    <li><a href="#portfolio">مشاريعنا</a></li>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
                     <li><a href="#contact">تواصل معنا</a></li>
+                    <li><a href="#portfolio">مشاريعنا</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#about">عن الشركة</a></li>
+                    <li class="menu-active"><a href="#header-carousel">الرئيسية</a></li>
                 </ul>
+            
+                <style>
+                    #nav-menu-container {
+                        direction: rtl;
+                    }
+            
+                    .nav-menu {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                        gap: 2rem;
+                    }
+            
+                    .nav-menu li a {
+                        color: #2c3e50;
+                        font-size: 1.1rem;
+                        font-family: 'Tajawal', sans-serif;
+                        text-decoration: none;
+                        padding: 10px 0;
+                        position: relative;
+                        transition: all 0.3s ease;
+                    }
+            
+                    .nav-menu li a::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 0;
+                        height: 2px;
+                        background: #ffc107;
+                        transition: width 0.3s ease;
+                    }
+            
+                    .nav-menu li a:hover::after {
+                        width: 100%;
+                    }
+            
+                    .nav-menu li.menu-active a {
+                        color: #ffc107;
+                        font-weight: 600;
+                    }
+            
+                    @media (max-width: 768px) {
+                        .nav-menu {
+                            flex-direction: column;
+                            align-items: flex-end;
+                            gap: 1rem;
+                        }
+                    }
+                </style>
             </nav>
         </div>
     </div>
@@ -101,7 +154,7 @@
                         </div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2 class="animate__animated animate__fadeInDown">الروضة الشريفة لل والعمرة</h2>
+                                <h2 class="animate__animated animate__fadeInDown">الروضة الشريفةللعمرة</h2>
                                 <p class="animate__animated animate__fadeInUp">خدمات متكاملة لضيوف الرحمن</p>
                                 <a href="#contact" class="btn btn-warning animate__animated animate__fadeInUp">تواصل
                                     معنا</a>
@@ -486,7 +539,87 @@
             </div>
         </div>
     </div>
+<!-- Clean Banner Section -->
+<section class="clean-banner">
+    <div class="banner-container">
+        <img src="./images/banner.png" alt="عمرة مباركة" class="banner-image" loading="lazy">
+        <div class="banner-overlay"></div>
+    </div>
 
+    <style>
+        .clean-banner {
+            position: relative;
+            width: 100%;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 60vh; /* Responsive height based on viewport */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .banner-container:hover .banner-image {
+            transform: scale(1.05);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.3)
+            );
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .banner-container {
+                height: 50vh;
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .banner-container {
+                height: 40vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-container {
+                height: 35vh;
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clean-banner {
+                margin: 1rem 0;
+            }
+
+            .banner-container {
+                height: 30vh;
+                border-radius: 8px;
+            }
+        }
+    </style>
+</section>
     <!-- About Us End-->
 <!-- Spiritual Experience Section -->
 <section class="spiritual-experience">
@@ -1098,7 +1231,7 @@
                                 data-title="Lorem ipsum dolor sit" title="Preview"><i class="fa fa-eye"></i></a>
                             <a href="https://www.facebook.com/profile.php?id=61566532663513" class="link-details"
                                 title="More Details"><i class="fa fa-link"></i></a>
-                            <h4 class="portfolio-title">الروضة الشريفة <span> للرحلات العمرة وال </span></h4>
+                            <h4 class="portfolio-title">الروضة الشريفة <span>  العمرة  </span></h4>
                         </figure>
                     </div>
                 </div>
