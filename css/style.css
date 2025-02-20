@@ -1,6 +1,4 @@
-/**********************************/
-/********** General CSS ***********/
-/**********************************/
+
 *{
     margin: 0;
     padding: 0;
@@ -65,10 +63,6 @@ h6 {
     color: #ffffff;
 }
 
-
-/**********************************/
-/********* Header Nav CSS *********/
-/**********************************/
 #header {
     padding: 30px 0;
     height: 92px;
@@ -262,10 +256,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
-
-/**********************************/
-/******** Header Carousel *********/
-/**********************************/
 #header-carousel {
     display: table;
     width: 100%;
@@ -283,7 +273,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #header-carousel .carousel-item::before {
     content: '';
-background-image: url(../img/Artboard\ 4.webp);
+background-image: url(../img/kaba.jpg);
 background-position: center center;
 background-size: cover;
     position: absolute;
@@ -1940,4 +1930,6 @@ background-size: cover;
 .floating-button.whatsapp {
     animation: pulse 2s infinite;
 }
-/* banner */
+
+
+
