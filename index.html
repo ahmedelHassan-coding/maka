@@ -1371,10 +1371,7 @@
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="./images/riad.png" class="img-fluid" alt="" loading="lazy">
-                            <a href="./images/riad.png" class="link-preview" data-lightbox="portfolio"
-                                data-title="Lorem ipsum dolor sit" title="Preview"><i class="fa fa-eye"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=61566532663513" class="link-details"
-                                title="More Details"><i class="fa fa-link"></i></a>
+                     
                             <h4 class="portfolio-title">الروضة الشريفة <span> لك أجر عمرتك ولنا شرف خدمتك.
 
                                 </span></h4>
@@ -1386,10 +1383,7 @@
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="img/Artboard 2 (4).png" class="img-fluid" alt="" loading="lazy">
-                            <a href="img/Artboard 2 (4).png" class="link-preview" data-lightbox="portfolio"
-                                data-title="Lorem ipsum dolor sit" title="Preview"><i class="fa fa-eye"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=61566532663513" class="link-details"
-                                title="More Details"><i class="fa fa-link"></i></a>
+                       
                             <h4 class="portfolio-title">الروضة الشريفة <span> للرحلات العمرة </span></h4>
                         </figure>
                     </div>
@@ -1399,16 +1393,187 @@
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="img/Artboard 1 (1).png" class="img-fluid" alt="" loading="lazy">
-                            <a href="img/Artboard 1 (1).png" class="link-preview" data-lightbox="portfolio"
-                                data-title="Lorem ipsum dolor sit" title="Preview"><i class="fa fa-eye"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=61566532663513" class="link-details"
-                                title="More Details"><i class="fa fa-link"></i></a>
+                   
                             <h4 class="portfolio-title">الروضة الشريفة <span> العمرة </span></h4>
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+.portfolio-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.portfolio-wrap figure {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    margin: 0;
+    overflow: hidden;
+}
+
+.portfolio-wrap figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.portfolio-wrap:hover figure img {
+    transform: scale(1.1);
+}
+
+.portfolio-wrap .link-preview,
+.portfolio-wrap .link-details {
+    position: absolute;
+    top: -50px;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.portfolio-wrap .link-preview {
+    right: 30%;
+}
+
+.portfolio-wrap .link-details {
+    right: 50%;
+}
+
+.portfolio-wrap:hover .link-preview {
+    top: 20px;
+    opacity: 1;
+}
+
+.portfolio-wrap:hover .link-details {
+    top: 20px;
+    opacity: 1;
+}
+
+.portfolio-title {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.portfolio-wrap:hover .portfolio-title {
+    bottom: 0;
+    opacity: 1;
+}
+
+.portfolio-title span {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #ffc107;
+}
+
+/* Stagger animation for portfolio items */
+.portfolio-item:nth-child(1) .portfolio-wrap {
+    animation-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(2) .portfolio-wrap {
+    animation-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(3) .portfolio-wrap {
+    animation-delay: 0.6s;
+}
+
+/* Section header animation */
+.section-header {
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect for links */
+.link-preview:hover,
+.link-details:hover {
+    background: #ffc107;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-wrap figure {
+        height: 250px;
+    }
+    
+    .portfolio-title {
+        font-size: 1.1em;
+    }
+}
+</style>
+
+<script>
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe all portfolio items
+    document.querySelectorAll('.portfolio-wrap').forEach(item => {
+        observer.observe(item);
+        item.style.animationPlayState = 'paused';
+    });
+});
+</script>
+
     </div>
     <!-- Portfolio End -->
 
